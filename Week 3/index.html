@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js Pet Depot</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+</head>
+<body>
+  
+
+    <div id="app">
+        <header>
+            <h1 v-text="sitename"></h1>
+        </header>
+    <main>
+    <figure>
+        <figure style="display: flex; flex-direction: column; align-items: center; margin-bottom: 20px;">
+           <img src="img/cat.jpg" alt="" height="200" width="200">
+            <figcaption style="margin-top: 10px;">
+              <h2 v-text="product.title" style="font-size: 1.2em; margin-bottom: 5px;"></h2>    
+              <p v-text="product.descrption" style="font-size: 0.9em; margin-bottom: 10px;"></p>
+              <p style="font-weight: bold;">Price: {{ product.Price }}</p>
+            </figcaption>
+          </figure>
+          
+    </main>
+    </div>
+    <script type="text/javascript">
+    var webstore = new Vue({
+        el:'#app',//Don't foreget this comma
+        data:{
+            sitename:'Vue.js Pet Depot',
+            product:{
+                id:1001,
+                title:"Cat For Sell",
+                descrption:"A Cute Cat For Family",
+                Price:2000,
+                Image:"img/cat.jpg"
+            }
+        }
+    });
+    </script>
+</body>
+</html>
